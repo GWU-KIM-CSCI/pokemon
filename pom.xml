@@ -6,7 +6,7 @@
 
     <groupId>edu.gwu</groupId>
     <artifactId>pokemon</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-Lab8</version>
 
     <build>
         <plugins>
@@ -22,6 +22,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
                 <configuration>
                     <archive>
                         <manifest>
