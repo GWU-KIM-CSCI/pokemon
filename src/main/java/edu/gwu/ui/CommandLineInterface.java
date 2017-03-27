@@ -7,21 +7,6 @@ import edu.gwu.game.AttackEngine;
 import java.util.Scanner;
 
 public class CommandLineInterface implements PokemonInterface {
-//    public AttackEngine getCommand(Pokemon issuer, Pokemon receiver) {
-//        Scanner in = new Scanner(System.in);
-//        do {
-//            System.out.println("What would you like to do? [A]ttack | [S]witch Pokemon ");
-//            String choice = in.nextLine().toLowerCase();
-//            if (choice.startsWith("a")) {
-//                return new AttackEngine(issuer, receiver);
-//            } else if (choice.startsWith("s")){
-//                System.out.println("You can't switch Pokemon.");
-//            } else {
-//                System.out.println("Bad input.");
-//            }
-//        } while (true);
-//    }
-
     public Move getMove(Pokemon issuer) {
         Scanner in = new Scanner(System.in);
         do {
@@ -33,12 +18,14 @@ public class CommandLineInterface implements PokemonInterface {
                 i++;
             }
 
+            System.out.println(issuer.getMoves().size());
+
             int choice = in.nextInt();
-            if (choice > 0 && choice < issuer.getMoves().size()) {
+            if (choice > 0 && choice <= issuer.getMoves().size()) {
                 return issuer.getMoves().get(choice - 1);
             }
 
-            System.out.print("Invalid choice.");
+            System.out.println("Invalid choice.");
         } while (true);
     }
 
